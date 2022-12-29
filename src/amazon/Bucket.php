@@ -8,7 +8,7 @@
 namespace yii2tech\filestorage\amazon;
 
 use yii2tech\filestorage\amazon\Region;
-use Aws\S3\Enum\CannedAcl;
+
 use yii\base\InvalidConfigException;
 use yii\log\Logger;
 use yii2tech\filestorage\BucketSubDirTemplate;
