@@ -69,6 +69,8 @@ class Storage extends BaseStorage
 
     public $region = 'eu-west-1';
 
+    public $version = '2006-03-01';
+
     /**
      * @var array additional configuration options for S3 client.
      * Please refer to [[S3Client::factory()]] for available options list.
@@ -119,7 +121,8 @@ class Storage extends BaseStorage
         $clientConfig = array_merge($this->amazonS3Config, [
             'key' => $this->awsKey,
             'secret' => $this->awsSecretKey,
-            'region' => $this->region
+            'region' => $this->region,
+            'version' => $this->version
         ]);
         return S3Client::factory($clientConfig);
     }
