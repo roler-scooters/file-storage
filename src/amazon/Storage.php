@@ -66,6 +66,9 @@ class Storage extends BaseStorage
      * If constant 'AWS_SECRET_KEY' has been defined, this field can be left blank.
      */
     public $awsSecretKey = '';
+
+    public $region = 'eu-west-1';
+
     /**
      * @var array additional configuration options for S3 client.
      * Please refer to [[S3Client::factory()]] for available options list.
@@ -116,6 +119,7 @@ class Storage extends BaseStorage
         $clientConfig = array_merge($this->amazonS3Config, [
             'key' => $this->awsKey,
             'secret' => $this->awsSecretKey,
+            'region' => $this->region
         ]);
         return S3Client::factory($clientConfig);
     }
